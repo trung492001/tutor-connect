@@ -1,4 +1,4 @@
-# flutter_application_1
+# Tutor Connect
 
 A new Flutter project.
 
