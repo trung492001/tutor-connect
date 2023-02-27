@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/component/app_bar.dart';
 import 'package:flutter_application_1/home_page.dart';
+import 'package:flutter_application_1/setting_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Main extends StatefulWidget {
@@ -57,7 +58,9 @@ class _MainState extends State<Main> {
               ? HomePage(
                   setNavBarIndex: _onItemTapped,
                 )
-              : null),
+              : _selectedIndex == 4
+                  ? const SettingPage()
+                  : null),
       bottomNavigationBar: BottomNavigationBar(
         unselectedItemColor: Colors.black,
         showUnselectedLabels: true,
