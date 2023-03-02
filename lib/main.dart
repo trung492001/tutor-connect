@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/component/app_bar.dart';
-import 'package:flutter_application_1/home_page.dart';
-import 'package:flutter_application_1/setting_page.dart';
+import 'package:flutter_application_1/app_bar.dart';
+import 'package:flutter_application_1/home_page/home_page.dart';
+import 'package:flutter_application_1/login_page/login_page.dart';
+import 'package:flutter_application_1/setting_page/setting_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Main extends StatefulWidget {
@@ -92,6 +93,6 @@ class _MainState extends State<Main> {
 
 void main() {
   runApp(
-    const MaterialApp(home: Main()),
+    const MaterialApp(home: LoginPage()),
   );
 }

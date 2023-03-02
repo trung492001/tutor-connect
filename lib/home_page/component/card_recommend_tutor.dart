@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/tutor_detail_page.dart';
+import 'package:flutter_application_1/tutor_profile/tutor_detail_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CardRecommendTutor extends StatelessWidget {

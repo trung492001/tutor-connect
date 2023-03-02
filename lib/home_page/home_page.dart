@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/component/card_recommend_tutor.dart';
+import 'package:flutter_application_1/home_page/component/card_recommend_tutor.dart';
 
 class HomePage extends StatefulWidget {
   Function setNavBarIndex;
