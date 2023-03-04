@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/home_page/component/card_recommend_tutor.dart';
+import 'package:flutter_application_1/src/screen/home_page/component/card_recommend_tutor.dart';
 
 class HomePage extends StatefulWidget {
   Function setNavBarIndex;
@@ -39,9 +39,13 @@ class _HomePageState extends State<HomePage> {
               ]),
             )),
         const CardRecommendTutor(),
+        const SizedBox(height: 15),
         const CardRecommendTutor(),
+        const SizedBox(height: 15),
         const CardRecommendTutor(),
+        const SizedBox(height: 15),
         const CardRecommendTutor(),
+        const SizedBox(height: 15),
         const CardRecommendTutor()
       ],
     ));

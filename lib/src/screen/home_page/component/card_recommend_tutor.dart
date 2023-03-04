@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/tutor_profile/tutor_detail_page.dart';
+import 'package:flutter_application_1/src/share/chip_custom.dart';
+import 'package:flutter_application_1/src/screen/tutor_profile/tutor_profile_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CardRecommendTutor extends StatelessWidget {
@@ -12,16 +13,12 @@ class CardRecommendTutor extends StatelessWidget {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const TutorDetailPage()),
+            MaterialPageRoute(builder: (context) => const TutorProfilePage()),
           );
         },
         child: Container(
             decoration: const BoxDecoration(boxShadow: [
-              BoxShadow(
-                  color: Colors.black,
-                  blurRadius: 10,
-                  spreadRadius: -18,
-                  offset: Offset(-9, 12))
+              BoxShadow(color: Colors.grey, blurRadius: 10, spreadRadius: -10)
             ]),
             child: Card(
                 child: Padding(
@@ -48,23 +45,14 @@ class CardRecommendTutor extends StatelessWidget {
                               ),
                               Row(
                                 children: const [
-                                  FaIcon(FontAwesomeIcons.solidStar,
-                                      color: Color(0xFFFF9000)),
-                                  FaIcon(FontAwesomeIcons.solidStar,
-                                      color: Color(0xFFFF9000)),
-                                  FaIcon(FontAwesomeIcons.solidStar,
-                                      color: Color(0xFFFF9000)),
-                                  FaIcon(FontAwesomeIcons.solidStar,
-                                      color: Color(0xFFFF9000)),
-                                  FaIcon(FontAwesomeIcons.solidStar,
-                                      color: Color(0xFFFF9000)),
+                                  Icon(Icons.star, color: Colors.yellow),
+                                  Icon(Icons.star, color: Colors.yellow),
+                                  Icon(Icons.star, color: Colors.yellow),
+                                  Icon(Icons.star, color: Colors.yellow),
+                                  Icon(Icons.star, color: Colors.yellow)
                                 ],
                               ),
-                              Row(children: const [
-                                Chip(
-                                  label: Text('English'),
-                                )
-                              ])
+                              Row(children: [ChipCustom(text: "English")])
                             ],
                           ),
                         )

@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                         child: Text(
                           "Email",
                           style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 17,
                               fontWeight: FontWeight.bold,
                               color: Colors.grey[800]),
                         ),
@@ -78,7 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                         padding: const EdgeInsets.only(bottom: 4),
                         child: Text("Password",
                             style: TextStyle(
-                                fontSize: 20,
+                                fontSize: 17,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.grey[800])),
                       ),
@@ -99,7 +99,7 @@ class _LoginPageState extends State<LoginPage> {
                                 borderSide: BorderSide.none,
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(10))),
-                            hintText: "**************",
+                            hintText: "**********",
                             suffixIcon: IconButton(
                               splashColor: Colors.transparent,
                               icon: Icon(
@@ -125,7 +125,7 @@ class _LoginPageState extends State<LoginPage> {
                       children: [
                         Row(
                           children: <Widget>[
-                            const Text("Not a member yet ? ",
+                            const Text("Don't have account? ",
                                 style: TextStyle(fontSize: 12)),
                             GestureDetector(
                                 child: const Text("Sign up",
@@ -137,9 +137,10 @@ class _LoginPageState extends State<LoginPage> {
                           ],
                         ),
                         GestureDetector(
-                            child: const Text("Forgot password ?",
+                            child: const Text("Forgot password?",
                                 style: TextStyle(
-                                    color: Colors.blue, fontSize: 12)),
+                                    color: Color.fromRGBO(41, 121, 255, 1),
+                                    fontSize: 12)),
                             onTap: () {
                               // Navigator.popAndPushNamed(context, routes.forgotPasswordPage);
                             })
@@ -150,7 +151,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: FilledButton(
                       style: const ButtonStyle(
                           backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(41, 121, 255, 1)),
+                              Color.fromRGBO(5, 67, 173, 1)),
                           minimumSize:
                               MaterialStatePropertyAll(Size.fromHeight(50))),
                       child: const Text('Log In'),

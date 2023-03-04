@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/app_bar.dart';
-import 'package:flutter_application_1/home_page/home_page.dart';
-import 'package:flutter_application_1/login_page/login_page.dart';
-import 'package:flutter_application_1/setting_page/setting_page.dart';
+import 'package:flutter_application_1/src/screen/home_page/home_page.dart';
+import 'package:flutter_application_1/src/screen/login_page/login_page.dart';
+import 'package:flutter_application_1/src/screen/schedule_page/schedule_page.dart';
+import 'package:flutter_application_1/src/screen/setting_page/setting_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Main extends StatefulWidget {
@@ -22,7 +23,7 @@ class _MainState extends State<Main> {
       style: optionStyle,
     ),
     Text(
-      'Message',
+      'Schedule',
       style: optionStyle,
     ),
     Text(
@@ -61,7 +62,9 @@ class _MainState extends State<Main> {
                 )
               : _selectedIndex == 4
                   ? const SettingPage()
-                  : null),
+                  : _selectedIndex == 1
+                      ? const SchedulePage()
+                      : null),
       bottomNavigationBar: BottomNavigationBar(
         unselectedItemColor: Colors.black,
         showUnselectedLabels: true,
@@ -71,8 +74,8 @@ class _MainState extends State<Main> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: FaIcon(FontAwesomeIcons.solidComments),
-            label: 'Message',
+            icon: FaIcon(FontAwesomeIcons.calendarDays),
+            label: 'Schedule',
           ),
           BottomNavigationBarItem(
             icon: FaIcon(FontAwesomeIcons.clock),
