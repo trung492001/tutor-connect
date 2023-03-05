@@ -9,10 +9,14 @@ class SchedulePage extends StatelessWidget {
     return Padding(
         padding: const EdgeInsets.all(20),
         child: ListView(
-          children: [
-            const Text(
+          children: const [
+            Text(
                 "Here is a list of the sessions you have booked. You can track when the meeting starts, join the meeting with one click or can cancel the meeting before 2 hours",
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.grey)),
+            SizedBox(height: 10),
             // Text("Latest book"),
             // Text("Name"),
             // Text.rich(
@@ -25,7 +29,9 @@ class SchedulePage extends StatelessWidget {
             //       ]),
 
             // )
-            ScheduleItem()
+            ScheduleItem(),
+            SizedBox(height: 10),
+            ScheduleItem(),
           ],
         ));
   }

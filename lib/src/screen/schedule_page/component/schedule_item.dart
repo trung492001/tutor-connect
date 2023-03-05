@@ -1,5 +1,6 @@
 import 'package:country_flags/country_flags.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/src/screen/schedule_page/component/dialog_add_request.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 
@@ -13,11 +14,11 @@ class ScheduleItem extends StatefulWidget {
 class _ScheduleItemState extends State<ScheduleItem> {
   bool _isOpen = false;
 
-  DateTime startTime = DateTime.now();
-  DateTime endTime = DateTime.now();
-  int numberLesson = 1;
+  final DateTime _startTime = DateTime.now();
+  final DateTime _endTime = DateTime.now();
+  final int _numberLesson = 1;
 
-  String request = "";
+  String _request = "";
 
   @override
   Widget build(BuildContext context) {
@@ -29,11 +30,11 @@ class _ScheduleItemState extends State<ScheduleItem> {
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text(
-              DateFormat("EEE, d MMM yy").format(startTime),
+              DateFormat("EEE, d MMM yy").format(_startTime),
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
             ),
             Text.rich(TextSpan(
-                text: numberLesson.toString(),
+                text: _numberLesson.toString(),
                 children: const [TextSpan(text: " lesson")])),
             Container(
                 width: double.infinity,
@@ -88,13 +89,13 @@ class _ScheduleItemState extends State<ScheduleItem> {
                               Text.rich(
                                   style: const TextStyle(fontSize: 15),
                                   TextSpan(
-                                      text:
-                                          DateFormat("HH:mm").format(startTime),
+                                      text: DateFormat("HH:mm")
+                                          .format(_startTime),
                                       children: [
                                         TextSpan(text: " - ", children: [
                                           TextSpan(
                                               text: DateFormat("HH:mm")
-                                                  .format(endTime))
+                                                  .format(_endTime))
                                         ])
                                       ])),
                               OutlinedButton(
@@ -130,24 +131,14 @@ class _ScheduleItemState extends State<ScheduleItem> {
                               onPressed: () => showDialog(
                                   context: context,
                                   builder: (BuildContext context) =>
-                                      SimpleDialog(
-                                        title: const Text('Select assignment'),
-                                        children: <Widget>[
-                                          SimpleDialogOption(
-                                            onPressed: () {},
-                                            child: const Text(
-                                                'Treasury department'),
-                                          ),
-                                          SimpleDialogOption(
-                                            onPressed: () {},
-                                            child:
-                                                const Text('State department'),
-                                          ),
-                                        ],
-                                      )),
+                                      DialogAddRequest(saveNote: (String temp) {
+                                        setState(() {
+                                          _request = temp;
+                                        });
+                                      })),
                               child: const Text("Edit")),
                           children: <Widget>[
-                            ListTile(title: Text(request)),
+                            ListTile(title: Text(_request)),
                           ],
                           onExpansionChanged: (bool expanded) {
                             setState(() => _isOpen = expanded);
