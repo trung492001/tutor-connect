@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/app_bar.dart';
+import 'package:flutter_application_1/src/screen/history_page/history_page.dart';
 import 'package:flutter_application_1/src/screen/home_page/home_page.dart';
 import 'package:flutter_application_1/src/screen/login_page/login_page.dart';
 import 'package:flutter_application_1/src/screen/schedule_page/schedule_page.dart';
-import 'package:flutter_application_1/src/screen/setting_page/setting_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Main extends StatefulWidget {
@@ -27,7 +27,7 @@ class _MainState extends State<Main> {
       style: optionStyle,
     ),
     Text(
-      'Upcoming',
+      'History',
       style: optionStyle,
     ),
     Text(
@@ -46,6 +46,27 @@ class _MainState extends State<Main> {
     });
   }
 
+  Widget generatePage(int index) {
+    switch (index) {
+      case 0:
+        {
+          return HomePage(setNavBarIndex: _onItemTapped);
+        }
+      case 1:
+        {
+          return const SchedulePage();
+        }
+      case 2:
+        {
+          return const HistoryPage();
+        }
+      default:
+        {
+          return const SizedBox.shrink();
+        }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,16 +76,7 @@ class _MainState extends State<Main> {
           child: MyAppBar(title: _widgetOptions.elementAt(_selectedIndex)),
         ),
       ),
-      body: Container(
-          child: _selectedIndex == 0
-              ? HomePage(
-                  setNavBarIndex: _onItemTapped,
-                )
-              : _selectedIndex == 4
-                  ? const SettingPage()
-                  : _selectedIndex == 1
-                      ? const SchedulePage()
-                      : null),
+      body: Container(child: generatePage(_selectedIndex)),
       bottomNavigationBar: BottomNavigationBar(
         unselectedItemColor: Colors.black,
         showUnselectedLabels: true,
@@ -78,9 +90,7 @@ class _MainState extends State<Main> {
             label: 'Schedule',
           ),
           BottomNavigationBarItem(
-            icon: FaIcon(FontAwesomeIcons.clock),
-            label: 'Upcoming',
-          ),
+              icon: FaIcon(FontAwesomeIcons.clockRotateLeft), label: 'History'),
           BottomNavigationBarItem(
               icon: FaIcon(FontAwesomeIcons.users), label: 'Tutors'),
           BottomNavigationBarItem(

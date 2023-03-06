@@ -125,8 +125,10 @@ class _ScheduleItemState extends State<ScheduleItem> {
                             style: TextStyle(fontSize: 13),
                           ),
                           leading: !_isOpen
-                              ? const Icon(Icons.keyboard_arrow_right_rounded)
-                              : const Icon(Icons.keyboard_arrow_down_rounded),
+                              ? const FaIcon(FontAwesomeIcons.chevronRight,
+                                  size: 15)
+                              : const FaIcon(FontAwesomeIcons.chevronDown,
+                                  size: 15),
                           trailing: TextButton(
                               onPressed: () => showDialog(
                                   context: context,

@@ -17,18 +17,6 @@ class SchedulePage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     color: Colors.grey)),
             SizedBox(height: 10),
-            // Text("Latest book"),
-            // Text("Name"),
-            // Text.rich(
-            //   TextSpan(
-            //       text: 'Book name',
-            //       style: TextStyle(color: Colors.blue),
-            //       children: [
-            //         TextSpan(
-            //             text: "(page 1)", style: TextStyle(color: Colors.black))
-            //       ]),
-
-            // )
             ScheduleItem(),
             SizedBox(height: 10),
             ScheduleItem(),
