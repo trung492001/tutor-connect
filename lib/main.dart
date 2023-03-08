@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/app_bar.dart';
+import 'package:flutter_application_1/src/screen/course_page/course_page.dart';
 import 'package:flutter_application_1/src/screen/history_page/history_page.dart';
 import 'package:flutter_application_1/src/screen/home_page/home_page.dart';
 import 'package:flutter_application_1/src/screen/login_page/login_page.dart';
@@ -31,7 +32,7 @@ class _MainState extends State<Main> {
       style: optionStyle,
     ),
     Text(
-      'Tutors',
+      'Course',
       style: optionStyle,
     ),
     Text(
@@ -59,6 +60,10 @@ class _MainState extends State<Main> {
       case 2:
         {
           return const HistoryPage();
+        }
+      case 3:
+        {
+          return const CoursePage();
         }
       default:
         {
@@ -92,7 +97,7 @@ class _MainState extends State<Main> {
           BottomNavigationBarItem(
               icon: FaIcon(FontAwesomeIcons.clockRotateLeft), label: 'History'),
           BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.users), label: 'Tutors'),
+              icon: FaIcon(FontAwesomeIcons.graduationCap), label: 'Course'),
           BottomNavigationBarItem(
               icon: FaIcon(FontAwesomeIcons.gear), label: 'Settings'),
         ],
